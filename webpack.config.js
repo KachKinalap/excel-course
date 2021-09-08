@@ -71,8 +71,9 @@ module.exports = (env, argv) => {
     devServer: {
       port: '8506',
       open: true,
-      // hot:true,
-      watchContentBase: true,
+      hot: true,
+      //почему-то отказывается работать, не могу найти в официальной документации webpack этого свойства в принципе, так что, видимо, оно уже нахой никому не нужно
+      //watchContentBase: true
     },
     plugins: plugins(),
     module: {

@@ -41,6 +41,8 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "core-js": "^3.9.0",
+    "dev-server": "^0.2.0",
+    "normalize.css": "^8.0.1",
     "regenerator-runtime": "^0.13.9"
   }
 }
