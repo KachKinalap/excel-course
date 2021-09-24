@@ -5,7 +5,6 @@ const CopyPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ESLintPlugin = require('eslint-webpack-plugin')
 
-
 module.exports = (env, argv) => {
   // проверка на стиль работы - продакшн или разработка
   const isProd = argv.mode === 'production';
@@ -33,7 +32,7 @@ module.exports = (env, argv) => {
     ]
 
     if (isDev) {
-      // несмотря на const при объявлении base, мы всёё равно можем добавить туда элементы через const, вот так, ребятки
+      // несмотря на const при объявлении base, мы всё равно можем добавить туда элементы через const, вот так, ребятки
       base.push(new ESLintPlugin());
     }
     return base;
@@ -63,8 +62,8 @@ module.exports = (env, argv) => {
       extensions: ['.js'],
       // делаем как бы переменную, содержащую в себе часть пути, чтобы не писать его полностью каждый раз
       alias: {
-        '@': path.resolve(__dirname, 'src'), // перенаправляет в папку src
-        '@core': path.resolve(__dirname, 'src', 'core'),
+        '@': path.resolve(__dirname, 'src/'), // перенаправляет в папку src
+        '@core': path.resolve(__dirname, 'src/core'),
       }
     },
     devtool: isDev ? 'source-map' : false,
@@ -72,8 +71,8 @@ module.exports = (env, argv) => {
       port: '8506',
       open: true,
       hot: true,
-      //почему-то отказывается работать, не могу найти в официальной документации webpack этого свойства в принципе, так что, видимо, оно уже нахой никому не нужно
-      //watchContentBase: true
+      // почему-то отказывается работать, не могу найти в официальной документации webpack этого свойства в принципе, так что, видимо, оно уже нахой никому не нужно
+      // watchContentBase: true
     },
     plugins: plugins(),
     module: {
